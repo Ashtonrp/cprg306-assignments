@@ -9,10 +9,8 @@ export default function ItemList({ items }) {
 
     const handleSortClick = (value) => setSortBy(value);
 
-    // Always work on a copy of the items prop
     let itemArray = [...items].map(item => ({ ...item }));
 
-    // Sorting the copied array—not the prop
     if (sortBy !== "none") {
         itemArray.sort((itemA, itemB) => {
             let valA = itemA[sortBy].toUpperCase();
